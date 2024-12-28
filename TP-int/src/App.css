@@ -5,6 +5,15 @@
   text-align: center;
 }
 
+.header {
+  height: 5vh;
+  background-color: lightslategrey;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 14px;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -18,25 +27,10 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
 .card {
   padding: 2em;
 }
 
-.read-the-docs {
+.body {
   color: #888;
 }
