@@ -10,3 +10,8 @@ Currently, two official plugins are available:
 Librerías agregadas:
     
     npm i react-router-dom
+    npm i react-toastify
+    npm i date-fns
+    npm i react-datepicker
+    npm i jwt-decode
+    npm i axios

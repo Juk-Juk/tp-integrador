@@ -3,7 +3,7 @@ import ROUTES from "../../constants/routes.js";
 import './Header.css'
 
 
-const { RECIPES, MY_RECIPES, LOGIN_REG, LOGOUT } = ROUTES;
+const { RECIPES, MY_RECIPES, AUTHORS, LOGIN_REG, LOGOUT } = ROUTES;
 
 const Header = () => {
     const links = [

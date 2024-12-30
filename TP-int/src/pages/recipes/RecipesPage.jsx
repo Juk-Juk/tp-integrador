@@ -11,7 +11,6 @@ const initialFilters = { //Initial Filters
     order: "desc",
 };
 
-
 const RecipesPage = () => {
     const [page, setPage] = useState(1);
     const [searchInput, setSearchInput] = useState('');
@@ -57,11 +56,11 @@ const RecipesPage = () => {
     };
 
     if (loading) { //Show loading state
-        return <p>Cargando noticias...</p>;
+        return <p>Cargando recetas...</p>;
     }
 
     if (error) { //Show error state
-        return <p>Error al cargar noticias: {error.message}</p>;
+        return <p>Error al cargar recetas: {error.message}</p>;
     }
 
     return (
