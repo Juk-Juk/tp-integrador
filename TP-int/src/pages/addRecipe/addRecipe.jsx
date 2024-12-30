@@ -166,6 +166,7 @@ const AddRecipe = () => {
                         type="submit"
                         className="btn-recipe"
                         disabled={isBtnDisabled}
+                        onClick={createRecipe}
                     >
                         Confirmar
                     </button>
