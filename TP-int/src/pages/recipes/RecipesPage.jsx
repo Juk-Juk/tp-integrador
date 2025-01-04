@@ -90,6 +90,7 @@ const RecipesPage = () => {
                                 <h2>{recipe.title}</h2>
                                 <p><strong>Autor:</strong> {recipe.author.name || "Desconocido"}</p>
                                 <p><strong>Fecha de creación:</strong> {createdDate}</p>
+                                <p>{recipe.stepByStep}</p>
                                 <p>{recipe.description}</p>
                                 <img src={getImageSrc(recipe.image)} alt={recipe.title} className="recipes-image" />
                             </div>
