@@ -13,32 +13,38 @@ const Header = () => {
   const isAdmin = Boolean(role == "admin");
 
     return (
-    <nav className="topnav">
-        <NavLink
+    <div className="nav-container">
+      <nav className="topnav">
+        <div className="left">
+          <NavLink
           key={RECIPES}
           to={RECIPES}
-      >
+          >
           Recetas
-        </NavLink>
-        {isAdmin && <NavLink
+          </NavLink>
+         {isAdmin && <NavLink
           key={AUTHORS}
           to={AUTHORS}
-      >
+          >
           Autores
-        </NavLink>}
-        {!isLogged && <NavLink
+         </NavLink>}
+        </div>
+        <div className="right">
+          {!isLogged && <NavLink
           key={LOGIN_REG}
           to={LOGIN_REG}
-      >
+          >
           Login/Registrarse
-        </NavLink>}
-        {isLogged && <NavLink
+          </NavLink>}
+          {isLogged && <NavLink
           key={LOGOUT}
           to={LOGOUT}
-      >
+         >
           Cerrar sesión
-        </NavLink>}
-    </nav>        
+         </NavLink>}
+        </div>
+      </nav>
+    </div>  
     );
 }
 

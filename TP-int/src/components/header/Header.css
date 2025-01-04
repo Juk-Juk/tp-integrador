@@ -1,0 +1,63 @@
+body {
+  background-color: #121212;
+  color: #ffffff;
+  margin: 0px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column; /* Add this line to allow column layout */
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%; /* Add this line to make the container full width */
+}
+
+.topnav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 0; /* Change padding to 10px 0 to remove side padding */
+  background-color: #333;
+  position: fixed; /* Add this line to fix the navbar to the top */
+  top: 0; /* Add this line to position the navbar at the top */
+  left: 0; /* Add this line to position the navbar at the left edge */
+  z-index: 1000; /* Add this line to ensure the navbar stays on top */
+}
+
+.topnav a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 30px;
+}
+
+.topnav a:hover {
+  background-color: #575757;
+  border-radius: 5px;
+}
+
+.left,
+.right {
+  display: flex;
+  gap: 15px; /* Espacio entre los elementos */
+}
+
+.topnav .right {
+  margin-left: auto;
+}
+
+.container {
+  padding-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 50px; /* Add this line to add space below the fixed navbar */
+}

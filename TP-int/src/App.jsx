@@ -25,12 +25,12 @@ const { RECIPES, MY_RECIPES, ADD_RECIPE, AUTHORS, LOGIN_REG, NOT_FOUND, UNAUTHOR
 
 function App() {
   return (        //Decomment this once back is up
-    // <AuthProvider>
-      <BrowserRouter>
+    <BrowserRouter>
+     {/* <AuthProvider> */}
         <AppContent />
         <ToastContainer position="top-center" />
-      </BrowserRouter>
-    // </AuthProvider>
+     {/* </AuthProvider> */}
+    </BrowserRouter>
   );
 }
 
