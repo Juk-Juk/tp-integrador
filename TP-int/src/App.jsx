@@ -10,7 +10,7 @@ import PublicRoute from './routes/PublicRoute.jsx';
 import RoleRoute from './routes/RoleRoute.jsx';
 import Login from './pages/login/Login.jsx'; //Missing css
 // import { useLocation } from 'react-router-dom';
-// import { useAuth } from './hooks/auth/useAuth.js';
+import { useAuth } from './hooks/auth/useAuth.js';
 import Unauthorized from './pages/deadend/UnauthorizedPage.jsx';
 import RecipesPage from './pages/recipes/RecipesPage.jsx'; //Missing css
 import ROUTES from './constants/routes.js';
@@ -25,22 +25,22 @@ const { RECIPES, MY_RECIPES, ADD_RECIPE, AUTHORS, LOGIN_REG, NOT_FOUND, UNAUTHOR
 
 function App() {
   return (        //Decomment this once back is up
-    // <AuthProvider>
-      <BrowserRouter>
+    <BrowserRouter>
+     {/* <AuthProvider> */}
         <AppContent />
-        <ToastContainer position="bottom-right" closeButton={false} />
-      </BrowserRouter>
-    // </AuthProvider>
+        <ToastContainer position="top-center" />
+     {/* </AuthProvider> */}
+    </BrowserRouter>
   );
 }
 
 function AppContent() {
-
-  const shouldShowHeaderFooter = true;
+  const { token } = useAuth();
+  const isLogged = Boolean(token);
 
   return (
     <div className="container">
-      {shouldShowHeaderFooter && <Header />}
+      <Header />
       <div className="content">
         <Routes>
 
@@ -52,7 +52,6 @@ function AppContent() {
           <Route element={<PrivateRoute />}>
             <Route path={ADD_RECIPE} element={<AddRecipe />} />
             <Route path={LOGOUT} element={<LogoutPage />} />
-            
           </Route>
 
           <Route element={<RoleRoute requiredRole="admin" />}>
@@ -64,7 +63,7 @@ function AppContent() {
 
         </Routes>
       </div>
-      {shouldShowHeaderFooter && <Footer />}
+      <Footer />
     </div>
   );
 }

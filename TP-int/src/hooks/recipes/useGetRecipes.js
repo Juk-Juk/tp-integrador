@@ -18,7 +18,7 @@ export const useGetRecipes = () => {
         error: false,
         loading: true,
       });
-      const urlRecipesWithFilters = buildURLWithFilters("/blogs", filters);
+      const urlRecipesWithFilters = buildURLWithFilters("/recipes", filters);
       const response = await axios.get(urlRecipesWithFilters);
       if (response.status === 200) { //If correct response
         setRecipeState({

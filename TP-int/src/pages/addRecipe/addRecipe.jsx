@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-//import DatePicker from "react-datepicker";
+import DatePicker from "react-datepicker";
 import { useCreateRecipe } from "../../hooks/recipes/useCreateRecipe";
 import { useGetAuthors } from "../../hooks/authors/useGetAuthors";
 import { toast } from "react-toastify";
@@ -88,7 +88,7 @@ const AddRecipe = () => {
         }));
     };
 
-    // const handleConfirm = () => createRecipe(recipe);
+    const handleConfirm = () => createRecipe(recipe);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -166,6 +166,7 @@ const AddRecipe = () => {
                         type="submit"
                         className="btn-recipe"
                         disabled={isBtnDisabled}
+                        onClick={handleConfirm}
                     >
                         Confirmar
                     </button>
