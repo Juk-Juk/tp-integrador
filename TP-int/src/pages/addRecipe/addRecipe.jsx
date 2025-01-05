@@ -22,7 +22,7 @@ const AddRecipe = () => {
     const [recipe, setRecipe] = useState(initRecipeValue);
     //    const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const { createRecipe, cleanError, error, loading, data } = useCreateRecipe();
+    const { createRecipe, error, loading, data } = useCreateRecipe();
     const { data: authors, error: authorsError, getAuthors, loading: authorsLoading } = useGetAuthors();
 
     useEffect(() => {
@@ -46,7 +46,7 @@ const AddRecipe = () => {
         if (!error && data) {
             //handleCloseModal();
             setRecipe(initRecipeValue);
-            toast.success("La nueva receta se creó con éxito.");
+            toast.success("La receta se creó con éxito.");
         };
     }, [error, loading, data]);
 
@@ -128,19 +128,19 @@ const AddRecipe = () => {
                         onChange={(date) => handleChange(date, 'createdDate')}
                         dateFormat={'dd/MM/YYYY'}
                     />
-                    <label htmlFor="" className="label-recipe">Paso a paso</label>
+                    <label htmlFor="" className="label-recipe">Ingredientes</label>
                     <textarea
                         className="input-recipe text-area-recipe"
                         value={recipe.stepByStep}
                         onChange={(event) => handleChange(event.target.value, 'stepByStep')}
-                        placeholder="Ingrese paso a paso"
+                        placeholder="Ingrese ingredientes"
                     />
-                    <label htmlFor="" className="label-recipe">Descripción</label>
+                    <label htmlFor="" className="label-recipe">Paso a paso</label>
                     <textarea
                         className="input-recipe text-area-recipe"
                         value={recipe.description}
                         onChange={(event) => handleChange(event.target.value, 'description')}
-                        placeholder="Ingrese descripción"
+                        placeholder="Ingrese paso a paso"
                     />
                     <label className="label-recipe">
                         Seleccionar imagen:

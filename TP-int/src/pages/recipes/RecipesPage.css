@@ -1,0 +1,80 @@
+.recipes-item {
+    background-color: #2c2c2c;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.recipes-item:hover {
+    transform: scale(1.05);
+}
+
+.recipes-item h2 {
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.recipes-item p {
+    color: #cccccc;
+}
+
+.recipes-item p strong {
+    color: #ffffff;
+}
+
+.recipes-item .author,
+.recipes-item .createdDate {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.recipes-item .ingredients,
+.recipes-item .stepByStep {
+    margin-top: 10px;
+}
+
+/* Search Container Styles */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #cccccc;
+    margin-right: 10px;
+}
+
+.search-btn {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #cccccc;
+    background-color: #f44336;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* Pagination Styles */
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #cccccc;
+    background-color: #2c2c2c;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.pagination span {
+    color: #ffffff;
+}
