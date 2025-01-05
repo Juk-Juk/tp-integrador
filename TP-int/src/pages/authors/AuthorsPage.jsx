@@ -33,8 +33,8 @@ const AuthorsPage = () => {
     const { data, error, getAuthors, loading } = useGetAuthors();
     const { deleteAuthor, deleteAuthorError, deleteAuthorLoading, deleteAuthorSuccess } = useDeleteAuthor();
 
-    const deleteAuthorMessage = deleteAuthorModalState?.authorSelected?.blogsCount > 0
-        ? `El autor ${deleteAuthorModalState?.authorSelected?.name} posee blogs asociados. Si elimina dicho autor, se eliminaran los blogs. ¿Desea continuar?`
+    const deleteAuthorMessage = deleteAuthorModalState?.authorSelected?.recipesCount > 0
+        ? `El autor ${deleteAuthorModalState?.authorSelected?.name} posee recetas asociadas. Si elimina el autor, se eliminaran sus recetas. ¿Desea continuar?`
         : `Esta a punto de eliminar el autor ${deleteAuthorModalState?.authorSelected?.name}. ¿Desea continuar?`;
 
     useEffect(() => {
@@ -102,7 +102,7 @@ const AuthorsPage = () => {
                             <th>Nombre</th>
                             <th>Email</th>
                             <th>Fecha de nacimiento</th>
-                            <th>N° de blogs</th>
+                            <th>N° de recetas</th>
                             <th>Fecha de creación</th>
                             <th>Acciones</th>
                         </tr>
@@ -114,7 +114,7 @@ const AuthorsPage = () => {
                                     <td>{author.name}</td>
                                     <td>{author.email}</td>
                                     <td className="td-center-text">{format(author.birthDate, 'dd/MM/yyyy')}</td>
-                                    <td className="td-center-text">{author.blogsCount ?? 0}</td>
+                                    <td className="td-center-text">{author.recipesCount ?? 0}</td>
                                     <td className="td-center-text">{format(author.createdDate, 'dd/MM/yyyy')}</td>
                                     <td>
                                         <ActionsComponent

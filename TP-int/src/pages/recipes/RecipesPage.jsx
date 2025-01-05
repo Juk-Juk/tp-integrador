@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useGetRecipes } from "../../hooks/recipes/useGetRecipes";
 import { format } from "date-fns";
+import { useNavigate } from "react-router-dom";
 
 import "./RecipesPage.css";
 
@@ -63,6 +64,10 @@ const RecipesPage = () => {
         return <p>Error al cargar recetas: {error.message}</p>;
     }
 
+    const handleAddRecipe = () => {
+            useNavigate("/add-recipe");
+    }
+
     return (
         <>
             <div className="search-container">
@@ -81,6 +86,9 @@ const RecipesPage = () => {
                     X
                 </button>
             </div>
+            <div>
+                <span className="material-icons add-btn" onClick={ handleAddRecipe }>add</span>
+            </div>
             <div className="recipes-list">
                 {recipes?.length ? (
                     recipes.map((recipe, index) => {
@@ -90,7 +98,7 @@ const RecipesPage = () => {
                                 <h2>{recipe.title}</h2>
                                 <p><strong>Autor:</strong> {recipe.author.name || "Desconocido"}</p>
                                 <p><strong>Fecha de creación:</strong> {createdDate}</p>
-                                <p>{recipe.stepByStep}</p>
+                                <p><strong>Ingredientes:</strong>{recipe.stepByStep}</p>
                                 <p>{recipe.description}</p>
                                 <img src={getImageSrc(recipe.image)} alt={recipe.title} className="recipes-image" />
                             </div>

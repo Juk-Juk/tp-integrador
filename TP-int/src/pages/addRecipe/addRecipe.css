@@ -1,0 +1,79 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #2d2d2d; 
+    padding: 20px;
+    padding-top: 100px;
+}
+
+.form-recipe {
+    display: flex;
+    flex-direction: row; 
+    width: 100%;
+    max-width: 600px;
+    background-color: #444;
+    padding: 20px;
+    border-radius: 8px;
+    flex-wrap: wrap; 
+}
+
+.label-recipe {
+    color: #fff;
+    margin-bottom: 8px;
+    width: 100%;
+}
+
+.input-recipe,
+.text-area-recipe,
+select {
+    width: calc(50% - 10px); 
+    padding: 10px;
+    margin-bottom: 15px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #000;
+}
+
+.input-recipe {
+    height: 40px;
+}
+
+.text-area-recipe {
+    min-height: 100px;
+    width: 100%;
+}
+
+.image-preview-container {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.image-preview {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+    cursor: pointer;
+    border: 2px solid #ddd;
+}
+
+.btn-recipe {
+    padding: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    align-self: flex-start; 
+}
+
+.btn-recipe:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}

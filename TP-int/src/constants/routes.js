@@ -4,6 +4,7 @@ const ROUTES = {
     ADD_RECIPE: "/add-recipe",
     AUTHORS: "/authors",
     LOGIN_REG: "/login",
+    REGISTER: "/register",
     NOT_FOUND: "*",
     UNAUTHORIZED: "/unauthorized",
     LOGOUT: "/logout"

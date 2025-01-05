@@ -1,24 +1,25 @@
 import { useState } from 'react';
-import { useLogin } from '../../hooks/auth/useLoginAuth';
-import { Link } from 'react-router-dom';
-import './Login.css';
+import { useRegister } from '../../hooks/auth/useRegisterAuth';
+import { toast } from 'react-toastify';
 
-const Login = () => {
+// import './Login.css';
+
+const Register = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const { loginFn, loginStateError, loginStateLoading } = useLogin();
+    const { registerFn, registerStateError, registerStateLoading, registerStateSuccess } = useRegister();
 
-    const handleLogin = () => {
+    const handleRegister = () => {
         if (email && password) {
-            loginFn({ email, password });
+            registerFn({ email, password });
         }
     }
 
     return (
         <div className='login-container'>
             <div className='login-content'>
-                <h2>Iniciar sesión</h2>
+                <h2>Registrarse</h2>
                 <input
                     type="email"
                     placeholder="Email"
@@ -31,18 +32,16 @@ const Login = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
-                <button onClick={handleLogin} disabled={loginStateLoading} className='login-btn'>
-                    {loginStateLoading ? 'Cargando...' : 'Iniciar sesión'}
+                <button onClick={handleRegister} disabled={registerStateLoading} className='login-btn'>
+                    {registerStateLoading ? 'Cargando...' : 'Registrarse'}
                 </button>
-                {loginStateError && (
+                {registerStateError && (
                     <p className='text-danger'>Ocurrió un error</p>
                 )}
-                <Link to="/register" style={{ color: 'blue' }}>
-                    Registrarse
-                </Link>
+                {registerStateSuccess && toast.success("Usuario creado con éxito")}
             </div>
         </div>
     );
 };
 
-export default Login;
+export default Register;

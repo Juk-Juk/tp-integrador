@@ -12,13 +12,13 @@ export const useLogin = () => {
   const { login } = useAuth();
 
   const loginFn = async ({ email, password }) => {
-    const urlLogin = `auth/login`;
+    const urlLogin = 'auth/login';
     try {
       setLoginState({ //Set loading to true
         error: null,
         loading: true,
       });
-      const response = await axiosInstance.post(urlLogin, { email, password }); //Search for the email and password
+      const response = await axiosInstance.post(urlLogin, { email, password }); //Posts the email and password
       if (response.status === 200) {
         const { accessToken } = response.data;
         const decodedToken = jwtDecode(accessToken);
