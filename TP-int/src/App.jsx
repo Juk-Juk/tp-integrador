@@ -1,6 +1,6 @@
 import './App.css';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
-import AddRecipe from './pages/addRecipe/AddRecipe.jsx';
+import AddRecipe from './pages/addRecipe/addRecipe.jsx';
 import AuthorsPage from './pages/authors/AuthorsPage.jsx'; //Missing css
 import Header from './components/header/Header.jsx';
 import Footer from "./components/footer/Footer.jsx"; //Missing css
