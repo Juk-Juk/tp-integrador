@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom';
 
-import './ConfirmModal.css';
+import './confirmModal.css';
 
 const ConfirmModal = ({ isOpen, errorMsg, onClose, onConfirm, message, loading }) => {
     if (!isOpen) return null;
