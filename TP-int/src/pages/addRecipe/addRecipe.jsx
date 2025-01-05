@@ -5,7 +5,7 @@ import { useGetAuthors } from "../../hooks/authors/useGetAuthors";
 import { toast } from "react-toastify";
 
 import "react-datepicker/dist/react-datepicker.css";
-import './AddRecipe.css';
+import './addRecipe.css';
 
 const initRecipeValue = {
     author: '',
