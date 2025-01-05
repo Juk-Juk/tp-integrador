@@ -1,9 +1,9 @@
 import './App.css';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
-import AddRecipe from './pages/addRecipe/addRecipe.jsx';
+import AddRecipe from './pages/addRecipe/AddRecipe1.jsx';
 import AuthorsPage from './pages/authors/AuthorsPage.jsx'; //Missing css
 import Header from './components/header/Header.jsx';
-import Footer from "./components/footer/Footer.jsx"; //Missing css
+import Footer from "./components/footer/Footer.jsx";
 import NotFoundPage from './pages/deadend/NotFoundPage.jsx';
 import PrivateRoute from './routes/PrivateRoute.jsx';
 import PublicRoute from './routes/PublicRoute.jsx';
